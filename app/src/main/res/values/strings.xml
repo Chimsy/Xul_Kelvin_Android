@@ -1,0 +1,76 @@
+<resources>
+    <string name="app_name">Xul Kelvin</string>
+
+    <!-- On-boarding  -->
+    <string name="title_activity_welcome">Home Screen</string>
+    <string name="next">Next</string>
+    <string name="skip">Skip</string>
+    <string name="start">Done</string>
+
+    <!-- End of On-boarding   -->
+
+
+    <!--  Lorem Ipsum  -->
+    <string name="welcome_title_lorem_ipsum">Batoka Safaris</string>
+    <string name="welcome_wow_feature_title_1">Title Goes Here</string>
+
+    <string name="welcome_payment_plan">Payment Scheduling</string>
+    <string name="welcome_payment_plan_description">Ensure effective online
+        \npayment plan application.</string>
+
+    <string name="welcome_timetables">Exam Time Table</string>
+    <string name="welcome_timetable_description">Your Exam Schedule In Your Pocket</string>
+
+    <string name="welcome_online_registration">Online Registration</string>
+    <string name="welcome_online_registration_description">Multiple Online Exam Registration.</string>
+
+    <string name="welcome_helpdesk">Helpdesk</string>
+    <string name="welcome_helpdesk_description">Provide an enhanced customer contact experience for customers, through a more user friendly, self-service and customer input via a helpdesk.</string>
+
+    <string name="welcome_description_lorem_ipsum">Lorem ipsum dolor sit amet,
+        \nconsectetur adipiscing elit,
+        \nsed do eiusmod t</string>
+    <string name="ownai_ticket_checking_system_title">OWNAI Ticket Checking System Title</string>
+    <string name="check_ticket">Check Ticket</string>
+    <string name="check_ticket_ussd">Dial (Check Ticket) </string>
+    <string name="ownai_ticket_checking_using_order_id">Order Number</string>
+    <string name="ownai_ticket_checking_using_ussd">USSD Checker</string>
+    <string name="ownai_ticket_checking_using_ticket_id">Ticket Number</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="image_view_verification_type">Image Icon For Verification Process</string>
+    <string name="scan_the_qr_code_on_the_ticket_and_validate_entrance">Scan the QR code on the ticket and validate Entrance</string>
+    <string name="scan_qr_code">Scan QR Code</string>
+
+
+    <string name="title_activity_ticket">Book Ticket</string>
+    <string name="lbl_duration">DURATION</string>
+    <string name="lbl_genre">GENRE</string>
+    <string name="lbl_rating">RATING</string>
+    <string name="lbl_price">PRICE</string>
+    <string name="btn_next_customer">NEXT CUSTOMER</string>
+    <string name="btn_coming_soon">COMING SOON</string>
+    <string name="msg_no_ticket_found">ERROR: Invalid QR Code</string>
+    <string name="type_in_order_below_to_verify_the_ticket">Type In Order Number Below To Verify The Ticket</string>
+    <string name="type_in_ticket_number_below_to_verify_the_ticket">Type In Ticket Number Below To Verify The Ticket</string>
+
+
+    <!-- Login & Reg -->
+
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_name">Fullname</string>
+    <string name="btn_login">LOGIN</string>
+    <string name="btn_register">REGISTER</string>
+    <string name="btn_link_to_register">Not a member? Sign up now.</string>
+    <string name="btn_link_to_login">Already registred! Login Me.</string>
+    <string name="welcome">Welcome</string>
+    <string name="btn_logout">LOGOUT</string>
+    <string name="name">Fullname</string>
+
+
+    <string name="powered_by">Made with ❤️ By Kelvin The Choreographer. </string>
+
+
+</resources>

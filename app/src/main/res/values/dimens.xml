@@ -1,0 +1,64 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="title_paragraph_line_spacing">8dp</dimen>
+    <dimen name="paragraph_line_spacing">4dp</dimen>
+    <dimen name="nav_header_vertical_spacing">8dp</dimen>
+    <dimen name="nav_header_height">176dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <!-- Intro Slider Dimensions. -->
+    <dimen name="dots_height">30dp</dimen>
+    <dimen name="dots_margin_bottom">20dp</dimen>
+    <dimen name="button_sides_padding">10dp</dimen>
+    <dimen name="button_bottom_padding">10dp</dimen>
+    <dimen name="relative_bottom_margin">50dp</dimen>
+    <!--End Intro Slider-->
+
+    <!--Tabs-->
+    <dimen name="custom_tab_layout_height">72dp</dimen>
+
+    <!-- Bottom Nav Dimens -->
+    <dimen name="card_margin">5dp</dimen>
+    <dimen name="card_album_radius">0dp</dimen>
+    <dimen name="card_cover_height">130dp</dimen>
+    <dimen name="card_title_padding">10dp</dimen>
+    <dimen name="card_price_padding_bottom">5dp</dimen>
+
+
+    <!-- CardView Dimension -->
+    <dimen name="card_view_width">100dp</dimen>
+    <dimen name="card_view_height">150dp</dimen>
+
+
+    <dimen name="dimen_20">20dp</dimen>
+    <dimen name="dimen_10">10dp</dimen>
+    <dimen name="activity_margin">16dp</dimen>
+    <dimen name="lbl_directory">14dp</dimen>
+    <dimen name="lbl_movie_name">28dp</dimen>
+    <dimen name="img_poster_height">220dp</dimen>
+    <dimen name="dimen_40">40dp</dimen>
+
+
+    <!--Tab Layout Dimensions-->
+    <dimen name="tab_max_width">264dp</dimen>
+    <dimen name="tab_padding_bottom">16dp</dimen>
+    <dimen name="tab_label">14sp</dimen>
+
+    <!-- Intro Slider Dimensions. -->
+    <dimen name="img_width_height">120dp</dimen>
+    <dimen name="slide_title">30dp</dimen>
+    <dimen name="slide_desc">16dp</dimen>
+    <dimen name="desc_padding">40dp</dimen>
+    <!--End Intro Slider-->
+
+    <!-- CardView Dimension -->
+
+    <!-- Bottom Sheet -->
+
+    <!--Collapsible Toolbar-->
+    <dimen name="detail_backdrop_height">270dp</dimen>
+
+
+</resources>
