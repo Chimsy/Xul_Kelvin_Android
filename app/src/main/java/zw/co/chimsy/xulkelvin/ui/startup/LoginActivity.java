@@ -1,4 +1,4 @@
-package zw.co.chimsy.xulkelvin.activity;
+package zw.co.chimsy.xulkelvin.ui.startup;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -30,6 +30,7 @@ import zw.co.chimsy.xulkelvin.R;
 import zw.co.chimsy.xulkelvin.helper.MySweetAlerts;
 import zw.co.chimsy.xulkelvin.helper.SQLiteHandler;
 import zw.co.chimsy.xulkelvin.helper.SessionManager;
+import zw.co.chimsy.xulkelvin.ui.home.MainActivity;
 
 import static zw.co.chimsy.xulkelvin.utils.AppConstants.KEY_ACTUAL_TOKEN;
 import static zw.co.chimsy.xulkelvin.utils.AppConstants.KEY_DATA;
@@ -66,7 +67,6 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
 
 
         activity = LoginActivity.this;
@@ -149,7 +149,7 @@ public class LoginActivity extends AppCompatActivity {
         postData.addProperty("password", password);
 
         final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
-        RequestBody postBody = RequestBody.create(JSON, postData.toString());
+        RequestBody postBody = RequestBody.create(postData.toString(), JSON);
         Request post = new Request.Builder()
                 .url(API_LOGIN)
                 .post(postBody)
@@ -232,7 +232,8 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    /* Show & Hide Dialog */
+
+    /* Progress Dialog*/
     private void showDialog() {
         if (!pDialog.isShowing()) pDialog.show();
     }
@@ -240,6 +241,6 @@ public class LoginActivity extends AppCompatActivity {
     private void hideDialog() {
         if (pDialog.isShowing()) pDialog.dismiss();
     }
-    /* Show & Hide Dialog End */
+    /* Progress Dialog End*/
 
 }

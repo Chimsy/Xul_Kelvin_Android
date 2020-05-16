@@ -1,20 +1,18 @@
-package zw.co.chimsy.xulkelvin.activity;
+package zw.co.chimsy.xulkelvin.ui.home;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 
 import java.util.HashMap;
 
 import zw.co.chimsy.xulkelvin.R;
-import zw.co.chimsy.xulkelvin.fragment.HomeFragment;
+import zw.co.chimsy.xulkelvin.ui.home.fragment.HomeFragment;
 import zw.co.chimsy.xulkelvin.helper.SQLiteHandler;
 import zw.co.chimsy.xulkelvin.helper.SessionManager;
+import zw.co.chimsy.xulkelvin.ui.startup.LoginActivity;
 
 public class MainActivity extends AppCompatActivity {
 

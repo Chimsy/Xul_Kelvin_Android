@@ -1,4 +1,4 @@
-package zw.co.chimsy.xulkelvin.fragment;
+package zw.co.chimsy.xulkelvin.ui.home.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,12 +14,12 @@ import android.widget.TextView;
 import android.widget.ViewFlipper;
 
 import zw.co.chimsy.xulkelvin.R;
-import zw.co.chimsy.xulkelvin.activity.ClassesActivity;
-import zw.co.chimsy.xulkelvin.activity.EnrollmentActivity;
-import zw.co.chimsy.xulkelvin.activity.HelpDeskActivity;
-import zw.co.chimsy.xulkelvin.activity.PaymentsActivity;
-import zw.co.chimsy.xulkelvin.activity.ResultsActivity;
-import zw.co.chimsy.xulkelvin.activity.TimeTableActivity;
+import zw.co.chimsy.xulkelvin.ui.classes.activity.ClassesActivity;
+import zw.co.chimsy.xulkelvin.ui.enrollment.EnrollmentActivity;
+import zw.co.chimsy.xulkelvin.ui.helpdesk.HelpDeskActivity;
+import zw.co.chimsy.xulkelvin.ui.payment.PaymentsActivity;
+import zw.co.chimsy.xulkelvin.ui.results.ResultsActivity;
+import zw.co.chimsy.xulkelvin.ui.timetable.TimeTableActivity;
 
 /**
  * A simple {@link Fragment} subclass.

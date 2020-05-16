@@ -12,14 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activity.TimeTableActivity"></activity>
-        <activity android:name=".activity.HelpDeskActivity" />
-        <activity android:name=".activity.PaymentsActivity" />
-        <activity android:name=".activity.EnrollmentActivity" />
-        <activity android:name=".activity.ResultsActivity" />
-        <activity android:name=".activity.ClassesActivity" /> <!-- Splash Activity -->
+        <activity android:name=".ui.classes.activity.DetailViewActivity"></activity>
+        <activity android:name=".ui.timetable.TimeTableActivity" />
+        <activity android:name=".ui.helpdesk.HelpDeskActivity" />
+        <activity android:name=".ui.payment.PaymentsActivity" />
+        <activity android:name=".ui.enrollment.EnrollmentActivity" />
+        <activity android:name=".ui.results.ResultsActivity" />
+        <activity android:name=".ui.classes.activity.ClassesActivity" /> <!-- Splash Activity -->
         <activity
-            android:name=".activity.SplashActivity"
+            android:name=".ui.startup.SplashActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,16 +30,16 @@
         </activity> <!-- Splash Activity End -->
         <!-- Other Activities -->
         <activity
-            android:name=".activity.RegisterActivity"
+            android:name=".ui.startup.RegisterActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activity.LoginActivity"
+            android:name=".ui.startup.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activity.WelcomeActivity"
+            android:name=".ui.startup.WelcomeActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".ui.home.MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>
 

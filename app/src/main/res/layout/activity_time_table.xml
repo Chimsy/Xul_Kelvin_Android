@@ -4,6 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.TimeTableActivity">
+    tools:context=".ui.timetable.TimeTableActivity">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

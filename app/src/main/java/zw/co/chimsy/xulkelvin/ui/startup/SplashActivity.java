@@ -1,11 +1,9 @@
-package zw.co.chimsy.xulkelvin.activity;
+package zw.co.chimsy.xulkelvin.ui.startup;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import zw.co.chimsy.xulkelvin.R;
 
 public class SplashActivity extends AppCompatActivity {
 

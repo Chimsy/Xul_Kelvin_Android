@@ -9,6 +9,7 @@ public class AppConstants {
 
     //Keys
     public static final String KEY_DATA = "data";
+    public static final String KEY_RESULT = "result";
     public static final String KEY_MESSAGE = "message";
     public static final String KEY_ERROR = "error";
     public static final String KEY_USER = "user";

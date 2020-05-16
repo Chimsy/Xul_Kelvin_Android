@@ -1,4 +1,4 @@
-package zw.co.chimsy.xulkelvin.activity;
+package zw.co.chimsy.xulkelvin.ui.helpdesk;
 
 import androidx.appcompat.app.AppCompatActivity;
 

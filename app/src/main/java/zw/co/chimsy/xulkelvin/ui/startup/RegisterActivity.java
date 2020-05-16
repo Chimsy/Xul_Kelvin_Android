@@ -1,4 +1,4 @@
-package zw.co.chimsy.xulkelvin.activity;
+package zw.co.chimsy.xulkelvin.ui.startup;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,6 +13,7 @@ import android.widget.Toast;
 import zw.co.chimsy.xulkelvin.R;
 import zw.co.chimsy.xulkelvin.helper.SQLiteHandler;
 import zw.co.chimsy.xulkelvin.helper.SessionManager;
+import zw.co.chimsy.xulkelvin.ui.home.MainActivity;
 
 public class RegisterActivity extends AppCompatActivity {
     private static final String TAG = RegisterActivity.class.getSimpleName();
