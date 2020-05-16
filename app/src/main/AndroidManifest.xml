@@ -12,12 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.classes.activity.DetailViewActivity"></activity>
+        <activity android:name=".ui.classes.activity.ClassesDetailViewActivity"></activity>
         <activity android:name=".ui.timetable.TimeTableActivity" />
         <activity android:name=".ui.helpdesk.HelpDeskActivity" />
         <activity android:name=".ui.payment.PaymentsActivity" />
         <activity android:name=".ui.enrollment.EnrollmentActivity" />
-        <activity android:name=".ui.results.ResultsActivity" />
+        <activity android:name=".ui.results.activity.ResultsActivity" />
         <activity android:name=".ui.classes.activity.ClassesActivity" /> <!-- Splash Activity -->
         <activity
             android:name=".ui.startup.SplashActivity"

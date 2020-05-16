@@ -18,7 +18,7 @@ import zw.co.chimsy.xulkelvin.ui.classes.activity.ClassesActivity;
 import zw.co.chimsy.xulkelvin.ui.enrollment.EnrollmentActivity;
 import zw.co.chimsy.xulkelvin.ui.helpdesk.HelpDeskActivity;
 import zw.co.chimsy.xulkelvin.ui.payment.PaymentsActivity;
-import zw.co.chimsy.xulkelvin.ui.results.ResultsActivity;
+import zw.co.chimsy.xulkelvin.ui.results.activity.ResultsActivity;
 import zw.co.chimsy.xulkelvin.ui.timetable.TimeTableActivity;
 
 /**

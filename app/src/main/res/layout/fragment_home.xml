@@ -108,7 +108,7 @@
                             android:layout_height="wrap_content"
                             android:background="@color/colorAccent"
                             android:lines="1"
-                            android:text="Classes"
+                            android:text="Courses"
                             android:textAlignment="center"
                             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
                             android:textColor="@android:color/white" />

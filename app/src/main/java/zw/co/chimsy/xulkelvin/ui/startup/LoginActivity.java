@@ -120,11 +120,12 @@ public class LoginActivity extends AppCompatActivity {
         btnLinkToRegister.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {
-//@TODO Dont forget to remove this session
+                /*
+                //@TODO Dont forget to remove this session
                 session.setLogin(true);
-
                 Intent i = new Intent(LoginActivity.this, MainActivity.class);
-//                Intent i = new Intent(LoginActivity.this, RegisterActivity.class);
+                */
+                Intent i = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(i);
                 finish();
             }

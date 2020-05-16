@@ -1,4 +1,4 @@
-package zw.co.chimsy.xulkelvin.ui.classes.model;
+package zw.co.chimsy.xulkelvin.ui.results.model;
 
 public class List_Data_Classes {
     private String cource_id;

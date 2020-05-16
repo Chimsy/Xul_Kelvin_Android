@@ -1,4 +1,4 @@
-package zw.co.chimsy.xulkelvin.ui.results;
+package zw.co.chimsy.xulkelvin.ui.results.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 

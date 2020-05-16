@@ -1,4 +1,4 @@
-package zw.co.chimsy.xulkelvin.ui.classes.adapter;
+package zw.co.chimsy.xulkelvin.ui.results.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -14,7 +14,7 @@ import java.util.List;
 
 import zw.co.chimsy.xulkelvin.R;
 import zw.co.chimsy.xulkelvin.ui.classes.activity.ClassesDetailViewActivity;
-import zw.co.chimsy.xulkelvin.ui.classes.model.List_Data_Classes;
+import zw.co.chimsy.xulkelvin.ui.results.model.List_Data_Classes;
 
 public class RecyclerVIewClassesAdapter extends RecyclerView.Adapter<RecyclerVIewClassesAdapter.ViewHolder> {
     private static final String TAG = RecyclerVIewClassesAdapter.class.getSimpleName();
