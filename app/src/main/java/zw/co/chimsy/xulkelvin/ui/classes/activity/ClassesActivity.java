@@ -33,17 +33,15 @@ import zw.co.chimsy.xulkelvin.R;
 import zw.co.chimsy.xulkelvin.helper.SQLiteHandler;
 import zw.co.chimsy.xulkelvin.ui.classes.adapter.RecyclerVIewClassesAdapter;
 import zw.co.chimsy.xulkelvin.ui.classes.model.List_Data_Classes;
-import zw.co.chimsy.xulkelvin.ui.startup.LoginActivity;
 
-import static zw.co.chimsy.xulkelvin.utils.AppConstants.KEY_DATA;
 import static zw.co.chimsy.xulkelvin.utils.AppConstants.KEY_RESULT;
 import static zw.co.chimsy.xulkelvin.utils.AppUrls.API_CURRENT_COURSES;
 
 public class ClassesActivity extends AppCompatActivity {
-    private static final String TAG = LoginActivity.class.getSimpleName();
+    private static final String TAG = ClassesActivity.class.getSimpleName();
 
     private RecyclerView rv;
-    private List<List_Data_Classes> list_datum_classes;
+    private List<List_Data_Classes> list_data_classes;
     private RecyclerVIewClassesAdapter adapter;
     private ProgressDialog pDialog;
     public OkHttpClient client;
@@ -69,8 +67,8 @@ public class ClassesActivity extends AppCompatActivity {
         rv = findViewById(R.id.recycler_view_classes);
         rv.setHasFixedSize(true);
         rv.setLayoutManager(new LinearLayoutManager(this));
-        list_datum_classes = new ArrayList<>();
-        adapter = new RecyclerVIewClassesAdapter(list_datum_classes, this);
+        list_data_classes = new ArrayList<>();
+        adapter = new RecyclerVIewClassesAdapter(list_data_classes, this);
 
         fetchUserProfile();
     }
@@ -80,23 +78,28 @@ public class ClassesActivity extends AppCompatActivity {
         HashMap<String, String> user = db.getUserDetails();
 
         String actual_token = user.get("actual_token");
-        getData(actual_token);
+        String year = user.get("year");
+        String semester = user.get("semester");
+        String program = user.get("program");
+
+
+        getData(actual_token, year, semester, program);
 
         Log.i(TAG, "fetchUserProfile: " + actual_token);
 
     }
 
     /* Consume End-Points */
-    private void getData(String token) {
+    private void getData(String token, String year, String semester, String program) {
 
         pDialog.setMessage("Fetching Your Current Classes...");
         showDialog();
 
         // Making a Post Request
         JsonObject postData = new JsonObject();
-        postData.addProperty("year", 4);
-        postData.addProperty("semester", 1);
-        postData.addProperty("program", "BMIS");
+        postData.addProperty("year", year);
+        postData.addProperty("semester", semester);
+        postData.addProperty("program", program);
 
         final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
         RequestBody postBody = RequestBody.create(postData.toString(), JSON);
@@ -145,7 +148,7 @@ public class ClassesActivity extends AppCompatActivity {
                                 jsonObjectInner.getString("course_name"),
                                 jsonObjectInner.getString("course_description"));
 
-                        list_datum_classes.add(ld);
+                        list_data_classes.add(ld);
                     }
 
                     runOnUiThread(new Runnable() {

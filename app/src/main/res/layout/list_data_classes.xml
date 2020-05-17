@@ -36,7 +36,8 @@
             android:singleLine="true"
             android:text="Computer Graphics"
             android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:paddingBottom="4dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
             android:textColor="@android:color/black"
             android:textStyle="bold" />
 
@@ -51,7 +52,7 @@
             android:background="@color/colorAccent"
             android:text="Learning basic computer graphical design and its evolution"
             android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
             android:textColor="@android:color/white"
             android:textStyle="italic" />
 

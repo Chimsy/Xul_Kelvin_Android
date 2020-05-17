@@ -14,7 +14,9 @@ public class AppUrls {
     public static String API_REGISTER = "http://" + IP_ADDRESS + "/android_login_api/register.php";
 
     // Current Courses End-Point
-//    public static String API_CURRENT_COURSES = "https://uniqueandrocode.000webhostapp.com/hiren/androidweb.php";
     public static String API_CURRENT_COURSES = "http://" + IP_ADDRESS + "/api/v1/current-courses";
+
+    // Course Results End-Point
+    public static String API_COURSES_RESULTS = "http://" + IP_ADDRESS + "/api/v1/results";
 
 }

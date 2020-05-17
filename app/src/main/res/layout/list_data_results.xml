@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:padding="10dp"
+    app:cardCornerRadius="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="2dp"
+            android:weightSum="10">
+
+            <TextView
+                android:id="@+id/text_result_cource_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_weight="7"
+                android:ellipsize="marquee"
+                android:lineSpacingExtra="1.5sp"
+                android:singleLine="true"
+                android:text="BMIS 411"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@android:color/black"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/text_result_exam_grade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:ellipsize="marquee"
+                android:gravity="end"
+                android:lineSpacingExtra="1.5sp"
+                android:singleLine="true"
+                android:text="Grade: 1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/text_result_course_work"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:ellipsize="marquee"
+            android:lineSpacingExtra="2sp"
+            android:paddingBottom="2dp"
+            android:singleLine="true"
+            android:text="Course Work Mark: 14%"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@android:color/black"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/text_result_exam_mark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:ellipsize="marquee"
+            android:lineSpacingExtra="2sp"
+            android:paddingBottom="2dp"
+            android:singleLine="true"
+            android:text="Exam Mark: 76%"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@android:color/black"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/text_result_overal_mark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/colorAccent"
+            android:ellipsize="marquee"
+            android:lineSpacingExtra="2sp"
+            android:paddingBottom="2dp"
+            android:singleLine="true"
+            android:text="Overal Score: 15%"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@android:color/white"
+            android:textStyle="normal" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
