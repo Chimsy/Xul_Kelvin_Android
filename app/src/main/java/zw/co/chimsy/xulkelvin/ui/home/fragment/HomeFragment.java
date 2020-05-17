@@ -14,11 +14,15 @@ import android.widget.TextView;
 import android.widget.ViewFlipper;
 
 import zw.co.chimsy.xulkelvin.R;
+import zw.co.chimsy.xulkelvin.helper.SQLiteHandler;
+import zw.co.chimsy.xulkelvin.helper.SessionManager;
 import zw.co.chimsy.xulkelvin.ui.classes.activity.ClassesActivity;
 import zw.co.chimsy.xulkelvin.ui.enrollment.EnrollmentActivity;
 import zw.co.chimsy.xulkelvin.ui.helpdesk.HelpDeskActivity;
+import zw.co.chimsy.xulkelvin.ui.home.MainActivity;
 import zw.co.chimsy.xulkelvin.ui.payment.PaymentsActivity;
 import zw.co.chimsy.xulkelvin.ui.results.activity.ResultsActivity;
+import zw.co.chimsy.xulkelvin.ui.startup.LoginActivity;
 import zw.co.chimsy.xulkelvin.ui.timetable.TimeTableActivity;
 
 /**
@@ -26,6 +30,8 @@ import zw.co.chimsy.xulkelvin.ui.timetable.TimeTableActivity;
  */
 public class HomeFragment extends Fragment  implements View.OnClickListener {
     private ViewFlipper v_flipper;// For The SlideShow
+    private SQLiteHandler db;
+    private SessionManager session;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -35,6 +41,12 @@ public class HomeFragment extends Fragment  implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+
+        // SqLite database handler
+        db = new SQLiteHandler(getActivity().getApplicationContext());
+
+        // session manager
+        session = new SessionManager(getActivity().getApplicationContext());
 
 
         //View Flipper SlideShows
@@ -54,6 +66,7 @@ public class HomeFragment extends Fragment  implements View.OnClickListener {
         CardView payments = view.findViewById(R.id.cardV_Payments);
         CardView helpdesk = view.findViewById(R.id.cardV_HelpDesk);
         CardView timetable = view.findViewById(R.id.cardV_ExamTimeTable);
+        CardView exit = view.findViewById(R.id.cardV_Exit);
 
         TextView poweredByObj = view.findViewById(R.id.textViewHomePoweredBy); //Powered By Chimsy®
 
@@ -62,6 +75,7 @@ public class HomeFragment extends Fragment  implements View.OnClickListener {
         classes.setOnClickListener(this);
         enrollment.setOnClickListener(this);
         timetable.setOnClickListener(this);
+        exit.setOnClickListener(this);
         payments.setOnClickListener(this);
         helpdesk.setOnClickListener(this);
         poweredByObj.setOnClickListener(this); // Powered By Chimsy®
@@ -120,10 +134,33 @@ public class HomeFragment extends Fragment  implements View.OnClickListener {
                 startActivity(i);
                 break;
 
+            case R.id.cardV_Exit:
+                logoutUser();
+                break;
+
             default:
                 break;
         }
 
+    }
+
+    /**
+     * Logging out the user. Will set isLoggedIn flag to false in shared
+     * preferences Clears the user data from sqlite users table
+     */
+    private void logoutUser() {
+        session.setLogin(false);
+
+        db.deleteUsers();
+
+        // Launching the login activity
+//        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+//        startActivity(intent);
+//        finish();
+
+
+        Intent intent = new Intent(getActivity(), LoginActivity.class);
+        getActivity().startActivity(intent);
     }
 }
 

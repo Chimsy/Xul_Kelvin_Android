@@ -25,16 +25,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-/*        TextView txtToken = findViewById(R.id.token);
-        TextView txtName = findViewById(R.id.name);
-        TextView txtEmail = findViewById(R.id.email);
-        TextView txtRegNum = findViewById(R.id.reg_num);
-        TextView txtYear = findViewById(R.id.year);
-        TextView txtSemester = findViewById(R.id.semester);
-        TextView txtProgram = findViewById(R.id.program);
-
-        Button btnLogout = findViewById(R.id.btnLogout);*/
-
         // SqLite database handler
         db = new SQLiteHandler(getApplicationContext());
 
@@ -55,24 +45,6 @@ public class MainActivity extends AppCompatActivity {
         String year = user.get("year");
         String semester = user.get("semester");
         String program = user.get("program");
-/*
-        // Displaying the user details on the screen
-        txtToken.setText(actual_token);
-        txtName.setText(name);
-        txtEmail.setText(email);
-        txtRegNum.setText(reg_num);
-        txtYear.setText(year);
-        txtSemester.setText(semester);
-        txtProgram.setText(program);
-
-        // Logout button click event
-        btnLogout.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                logoutUser();
-            }
-        });*/
 
         // YAZIPO Home Page a.k.a DashBoard (Tora Fragment)
         HomeFragment homeFragment = new HomeFragment();

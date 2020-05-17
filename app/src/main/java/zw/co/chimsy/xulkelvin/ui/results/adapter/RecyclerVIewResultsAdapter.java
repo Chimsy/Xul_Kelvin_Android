@@ -44,7 +44,6 @@ public class RecyclerVIewResultsAdapter extends RecyclerView.Adapter<RecyclerVIe
 
         int exam = Integer.parseInt(listData.getCourse_exam_mark());
         int courseWork = Integer.parseInt(listData.getCourse_work_mark());
-
         int overalMark = exam + courseWork;
 
         holder.text_result_overal_mark.setText("Overal Mark: " + overalMark + "%");
