@@ -21,7 +21,7 @@
             android:weightSum="10">
 
             <TextView
-                android:id="@+id/text_result_course_id"
+                android:id="@+id/text_timetable_course_id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
@@ -30,12 +30,13 @@
                 android:lineSpacingExtra="1.5sp"
                 android:singleLine="true"
                 android:text="BMIS 411"
+                android:background="@color/colorAccent"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
                 android:textStyle="normal" />
 
             <TextView
-                android:id="@+id/text_result_exam_grade"
+                android:id="@+id/text_timetable_level"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
@@ -43,14 +44,14 @@
                 android:gravity="end"
                 android:lineSpacingExtra="1.5sp"
                 android:singleLine="true"
-                android:text="Grade: 1"
+                android:text="Level: 4.2"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textColor="@android:color/black"
                 android:textStyle="bold" />
         </LinearLayout>
 
         <TextView
-            android:id="@+id/text_result_course_work"
+            android:id="@+id/text_timetable_venue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -58,14 +59,14 @@
             android:lineSpacingExtra="2sp"
             android:paddingBottom="2dp"
             android:singleLine="true"
-            android:text="Course Work Mark: 14%"
+            android:text="Exam Venue: TBA"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@android:color/black"
             android:textStyle="normal" />
 
         <TextView
-            android:id="@+id/text_result_exam_mark"
+            android:id="@+id/text_timetable_start_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -73,26 +74,40 @@
             android:lineSpacingExtra="2sp"
             android:paddingBottom="2dp"
             android:singleLine="true"
-            android:text="Exam Mark: 76%"
+            android:text="Start Time: 0900hrs"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@android:color/black"
             android:textStyle="normal" />
 
         <TextView
-            android:id="@+id/text_result_overal_mark"
+            android:id="@+id/text_timetable_exam_duration"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="@color/colorAccent"
             android:ellipsize="marquee"
             android:lineSpacingExtra="2sp"
             android:paddingBottom="2dp"
             android:singleLine="true"
-            android:text="Overal Score: 15%"
+            android:text="Exam Duration: 3hrs"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/black"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/text_timetable_exam_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:ellipsize="marquee"
+            android:lineSpacingExtra="2sp"
+            android:paddingBottom="2dp"
+            android:singleLine="true"
+            android:text="Exam Date: 2027-04-20"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@android:color/black"
             android:textStyle="normal" />
 
     </LinearLayout>

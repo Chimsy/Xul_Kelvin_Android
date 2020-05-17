@@ -38,12 +38,12 @@ public class RecyclerVIewClassesAdapter extends RecyclerView.Adapter<RecyclerVIe
     public void onBindViewHolder(ViewHolder holder, int position) {
         final List_Data_Classes listData = list_data_classes.get(position);
 
-        holder.text_cource_id.setText(listData.getCource_id());
-        holder.text_cource_id.setOnClickListener(new View.OnClickListener() {
+        holder.text_course_id.setText(listData.getCourse_id());
+        holder.text_course_id.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, ClassesDetailViewActivity.class);
-                intent.putExtra("text_cource_id", listData.getCource_id());
+                intent.putExtra("text_course_id", listData.getCourse_id());
                 intent.putExtra("text_course_name", listData.getCourse_name());
                 intent.putExtra("text_course_description", listData.getCourse_description());
                 context.startActivity(intent);
@@ -54,7 +54,7 @@ public class RecyclerVIewClassesAdapter extends RecyclerView.Adapter<RecyclerVIe
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, ClassesDetailViewActivity.class);
-                intent.putExtra("text_cource_id", listData.getCource_id());
+                intent.putExtra("text_course_id", listData.getCourse_id());
                 intent.putExtra("text_course_name", listData.getCourse_name());
                 intent.putExtra("text_course_description", listData.getCourse_description());
                 context.startActivity(intent);
@@ -65,7 +65,7 @@ public class RecyclerVIewClassesAdapter extends RecyclerView.Adapter<RecyclerVIe
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, ClassesDetailViewActivity.class);
-                intent.putExtra("text_cource_id", listData.getCource_id());
+                intent.putExtra("text_course_id", listData.getCourse_id());
                 intent.putExtra("text_course_name", listData.getCourse_name());
                 intent.putExtra("text_course_description", listData.getCourse_description());
                 context.startActivity(intent);
@@ -81,13 +81,13 @@ public class RecyclerVIewClassesAdapter extends RecyclerView.Adapter<RecyclerVIe
 
     static class ViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView text_cource_id;
+        private TextView text_course_id;
         private TextView text_course_name;
         private TextView text_course_description;
 
         ViewHolder(View itemView) {
             super(itemView);
-            text_cource_id = itemView.findViewById(R.id.text_cource_id);
+            text_course_id = itemView.findViewById(R.id.text_course_id);
             text_course_name = itemView.findViewById(R.id.text_course_name);
             text_course_description = itemView.findViewById(R.id.text_course_description);
         }

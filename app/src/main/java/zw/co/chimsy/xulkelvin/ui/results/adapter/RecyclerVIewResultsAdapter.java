@@ -37,7 +37,7 @@ public class RecyclerVIewResultsAdapter extends RecyclerView.Adapter<RecyclerVIe
     public void onBindViewHolder(ViewHolder holder, int position) {
         final List_Data_Results listData = list_data_results.get(position);
 
-        holder.text_result_cource_id.setText(listData.getCource_id());
+        holder.text_result_course_id.setText(listData.getCourse_id());
         holder.text_result_exam_grade.setText("Grade: " + listData.getCourse_exam_grade());
         holder.text_result_course_work.setText("Course WorkMark: " + listData.getCourse_work_mark() + "%");
         holder.text_result_exam_mark.setText("Exam Mark: " + listData.getCourse_exam_mark() + "%");
@@ -59,7 +59,7 @@ public class RecyclerVIewResultsAdapter extends RecyclerView.Adapter<RecyclerVIe
     static class ViewHolder extends RecyclerView.ViewHolder {
 
         private TextView
-                text_result_cource_id,
+                text_result_course_id,
                 text_result_exam_grade,
                 text_result_course_work,
                 text_result_exam_mark,
@@ -67,7 +67,7 @@ public class RecyclerVIewResultsAdapter extends RecyclerView.Adapter<RecyclerVIe
 
         ViewHolder(View itemView) {
             super(itemView);
-            text_result_cource_id = itemView.findViewById(R.id.text_result_cource_id);
+            text_result_course_id = itemView.findViewById(R.id.text_result_course_id);
             text_result_exam_grade = itemView.findViewById(R.id.text_result_exam_grade);
             text_result_course_work = itemView.findViewById(R.id.text_result_course_work);
             text_result_exam_mark = itemView.findViewById(R.id.text_result_exam_mark);

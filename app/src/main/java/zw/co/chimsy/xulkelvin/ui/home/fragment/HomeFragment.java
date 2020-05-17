@@ -2,10 +2,6 @@ package zw.co.chimsy.xulkelvin.ui.home.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.cardview.widget.CardView;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,22 +9,26 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
+import androidx.cardview.widget.CardView;
+import androidx.fragment.app.Fragment;
+
+import java.util.Objects;
+
 import zw.co.chimsy.xulkelvin.R;
 import zw.co.chimsy.xulkelvin.helper.SQLiteHandler;
 import zw.co.chimsy.xulkelvin.helper.SessionManager;
 import zw.co.chimsy.xulkelvin.ui.classes.activity.ClassesActivity;
 import zw.co.chimsy.xulkelvin.ui.enrollment.EnrollmentActivity;
 import zw.co.chimsy.xulkelvin.ui.helpdesk.HelpDeskActivity;
-import zw.co.chimsy.xulkelvin.ui.home.MainActivity;
 import zw.co.chimsy.xulkelvin.ui.payment.PaymentsActivity;
 import zw.co.chimsy.xulkelvin.ui.results.activity.ResultsActivity;
 import zw.co.chimsy.xulkelvin.ui.startup.LoginActivity;
-import zw.co.chimsy.xulkelvin.ui.timetable.TimeTableActivity;
+import zw.co.chimsy.xulkelvin.ui.timetable.activity.TimeTableActivity;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class HomeFragment extends Fragment  implements View.OnClickListener {
+public class HomeFragment extends Fragment implements View.OnClickListener {
     private ViewFlipper v_flipper;// For The SlideShow
     private SQLiteHandler db;
     private SessionManager session;
@@ -43,7 +43,7 @@ public class HomeFragment extends Fragment  implements View.OnClickListener {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         // SqLite database handler
-        db = new SQLiteHandler(getActivity().getApplicationContext());
+        db = new SQLiteHandler(Objects.requireNonNull(getActivity()).getApplicationContext());
 
         // session manager
         session = new SessionManager(getActivity().getApplicationContext());
@@ -153,14 +153,8 @@ public class HomeFragment extends Fragment  implements View.OnClickListener {
 
         db.deleteUsers();
 
-        // Launching the login activity
-//        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-//        startActivity(intent);
-//        finish();
-
-
         Intent intent = new Intent(getActivity(), LoginActivity.class);
-        getActivity().startActivity(intent);
+        Objects.requireNonNull(getActivity()).startActivity(intent);
     }
 }
 

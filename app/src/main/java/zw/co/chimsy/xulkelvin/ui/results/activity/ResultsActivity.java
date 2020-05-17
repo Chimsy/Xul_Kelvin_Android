@@ -54,7 +54,6 @@ public class ResultsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_results);
 
-
         // SqLite database handler
         db = new SQLiteHandler(getApplicationContext());
 
@@ -137,13 +136,13 @@ public class ResultsActivity extends AppCompatActivity {
                     JSONArray jsonArray = jsonObject.getJSONArray(KEY_RESULT);
 
                     JSONObject jsonObjectInnerLog = jsonArray.getJSONObject(0);
-                    Log.i(TAG, "onResponse: " + jsonObjectInnerLog.getString("cource_id"));
+                    Log.i(TAG, "onResponse: " + jsonObjectInnerLog.getString("course_id"));
 
                     for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject jsonObjectInner = jsonArray.getJSONObject(i);
 
                         List_Data_Results ld = new List_Data_Results(
-                                jsonObjectInner.getString("cource_id"),
+                                jsonObjectInner.getString("course_id"),
                                 jsonObjectInner.getString("course_work_mark"),
                                 jsonObjectInner.getString("course_exam_mark"),
                                 jsonObjectInner.getString("course_exam_grade"));

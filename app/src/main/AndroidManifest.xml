@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".ui.classes.activity.ClassesDetailViewActivity"></activity>
-        <activity android:name=".ui.timetable.TimeTableActivity" />
+        <activity android:name=".ui.timetable.activity.TimeTableActivity" />
         <activity android:name=".ui.helpdesk.HelpDeskActivity" />
         <activity android:name=".ui.payment.PaymentsActivity" />
         <activity android:name=".ui.enrollment.EnrollmentActivity" />

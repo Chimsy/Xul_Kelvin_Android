@@ -1,4 +1,4 @@
-package zw.co.chimsy.xulkelvin.ui.classes.activity;
+package zw.co.chimsy.xulkelvin.ui.timetable.activity;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
@@ -31,31 +31,29 @@ import okhttp3.Response;
 import okhttp3.ResponseBody;
 import zw.co.chimsy.xulkelvin.R;
 import zw.co.chimsy.xulkelvin.helper.SQLiteHandler;
-import zw.co.chimsy.xulkelvin.ui.classes.adapter.RecyclerVIewClassesAdapter;
-import zw.co.chimsy.xulkelvin.ui.classes.model.List_Data_Classes;
+import zw.co.chimsy.xulkelvin.ui.timetable.adapter.RecyclerVIewTimetableAdapter;
+import zw.co.chimsy.xulkelvin.ui.timetable.model.List_Data_Timetable;
 
 import static zw.co.chimsy.xulkelvin.utils.AppConstants.KEY_RESULT;
-import static zw.co.chimsy.xulkelvin.utils.AppUrls.API_CURRENT_COURSES;
+import static zw.co.chimsy.xulkelvin.utils.AppUrls.API_TIMETABLE;
 
-public class ClassesActivity extends AppCompatActivity {
-    private static final String TAG = ClassesActivity.class.getSimpleName();
+public class TimeTableActivity extends AppCompatActivity {
+    private static final String TAG = TimeTableActivity.class.getSimpleName();
 
     private RecyclerView rv;
-    private List<List_Data_Classes> list_data_classes;
-    private RecyclerVIewClassesAdapter adapter;
+    private List<List_Data_Timetable> list_data_timetables;
+    private RecyclerVIewTimetableAdapter adapter;
     private ProgressDialog pDialog;
     public OkHttpClient client;
     private SQLiteHandler db;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_classes);
+        setContentView(R.layout.activity_time_table);
 
         // SqLite database handler
         db = new SQLiteHandler(getApplicationContext());
-
 
         // Progress dialog
         pDialog = new ProgressDialog(this);
@@ -64,11 +62,11 @@ public class ClassesActivity extends AppCompatActivity {
         //OkHttp Initialise
         client = new OkHttpClient();
 
-        rv = findViewById(R.id.recycler_view_classes);
+        rv = findViewById(R.id.recycler_view_timetable);
         rv.setHasFixedSize(true);
         rv.setLayoutManager(new LinearLayoutManager(this));
-        list_data_classes = new ArrayList<>();
-        adapter = new RecyclerVIewClassesAdapter(list_data_classes, this);
+        list_data_timetables = new ArrayList<>();
+        adapter = new RecyclerVIewTimetableAdapter(list_data_timetables, this);
 
         fetchUserProfile();
     }
@@ -82,8 +80,7 @@ public class ClassesActivity extends AppCompatActivity {
         String semester = user.get("semester");
         String program = user.get("program");
 
-
-        getData(actual_token, year, semester, program);
+        getData(actual_token, year,semester, program);
 
         Log.i(TAG, "fetchUserProfile: " + actual_token);
 
@@ -92,19 +89,19 @@ public class ClassesActivity extends AppCompatActivity {
     /* Consume End-Points */
     private void getData(String token, String year, String semester, String program) {
 
-        pDialog.setMessage("Fetching Your Current Classes...");
+        pDialog.setMessage("Fetching Current Timetable...");
         showDialog();
 
         // Making a Post Request
         JsonObject postData = new JsonObject();
         postData.addProperty("year", year);
         postData.addProperty("semester", semester);
-        postData.addProperty("program", program);
+        postData.addProperty("program_code", program);
 
         final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
         RequestBody postBody = RequestBody.create(postData.toString(), JSON);
         Request post = new Request.Builder()
-                .url(API_CURRENT_COURSES)
+                .url(API_TIMETABLE)
                 .post(postBody)
                 .addHeader("Authorization", "Bearer " + token)
                 .build();
@@ -123,7 +120,7 @@ public class ClassesActivity extends AppCompatActivity {
                     ResponseBody responseBody = response.body();
                     if (!response.isSuccessful()) {
                         hideDialog();
-                        Toast.makeText(ClassesActivity.this, "ERROR: Failed To Reach Servers To Get Your Classes", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(TimeTableActivity.this, "ERROR: Failed To Reach Servers To Get Your Timetable", Toast.LENGTH_SHORT).show();
                         throw new IOException("Unexpected code " + response);
                     }
 
@@ -143,12 +140,16 @@ public class ClassesActivity extends AppCompatActivity {
                     for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject jsonObjectInner = jsonArray.getJSONObject(i);
 
-                        List_Data_Classes ld = new List_Data_Classes(
+                        List_Data_Timetable ld = new List_Data_Timetable(
+                                jsonObjectInner.getInt("year"),
+                                jsonObjectInner.getInt("semester"),
                                 jsonObjectInner.getString("course_id"),
-                                jsonObjectInner.getString("course_name"),
-                                jsonObjectInner.getString("course_description"));
+                                jsonObjectInner.getString("exam_date"),
+                                jsonObjectInner.getString("exam_time"),
+                                jsonObjectInner.getString("exam_venue"),
+                                jsonObjectInner.getString("exam_duration"));
 
-                        list_data_classes.add(ld);
+                        list_data_timetables.add(ld);
                     }
 
                     runOnUiThread(new Runnable() {
@@ -166,7 +167,6 @@ public class ClassesActivity extends AppCompatActivity {
 
             }
         });
-
 
     }
     /* Consume End-Points End */

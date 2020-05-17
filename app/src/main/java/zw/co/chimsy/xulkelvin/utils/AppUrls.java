@@ -19,4 +19,7 @@ public class AppUrls {
     // Course Results End-Point
     public static String API_COURSES_RESULTS = "http://" + IP_ADDRESS + "/api/v1/results";
 
+    // Course Timetable End-Point
+    public static String API_TIMETABLE = "http://" + IP_ADDRESS + "/api/v1/timetable";
+
 }

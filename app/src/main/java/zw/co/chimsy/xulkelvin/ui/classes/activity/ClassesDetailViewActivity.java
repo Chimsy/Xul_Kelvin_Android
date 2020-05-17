@@ -20,11 +20,11 @@ public class ClassesDetailViewActivity extends AppCompatActivity {
 
         Intent i = getIntent();
 
-        String text_cource_id = i.getStringExtra("text_cource_id");
+        String text_course_id = i.getStringExtra("text_course_id");
         String text_course_name = i.getStringExtra("text_course_name");
         String text_course_description = i.getStringExtra("text_course_description");
 
-        textview_course_id_name.setText(text_cource_id + " - " + text_course_name);
+        textview_course_id_name.setText(text_course_id + " - " + text_course_name);
         textview_course_description.setText(text_course_description);
 
     }
