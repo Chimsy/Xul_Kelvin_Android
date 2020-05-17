@@ -74,6 +74,8 @@
     <string name="current_courses">Current Courses</string>
     <string name="my_results">My Results</string>
     <string name="my_timetable">Timetable</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="program_id">Program ID</string>
 
 
 </resources>

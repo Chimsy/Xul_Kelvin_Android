@@ -74,8 +74,8 @@ public class LoginActivity extends AppCompatActivity {
 
         client = new OkHttpClient();
 
-        inputEmail = findViewById(R.id.email);
-        inputPassword = findViewById(R.id.password);
+        inputEmail = findViewById(R.id.editText_email);
+        inputPassword = findViewById(R.id.editText_password);
         btnLogin = findViewById(R.id.btnLogin);
         btnLinkToRegister = findViewById(R.id.btnLinkToRegisterScreen);
 

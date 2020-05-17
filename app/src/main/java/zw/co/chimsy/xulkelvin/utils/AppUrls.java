@@ -10,8 +10,10 @@ public class AppUrls {
     // Server user login url
     public static String API_LOGIN = "http://" + IP_ADDRESS + "/api/login ";
 
-    // Server user register url
-    public static String API_REGISTER = "http://" + IP_ADDRESS + "/android_login_api/register.php";
+    /* Student Registration */
+    public static String API_PROGRAM_IDS = "http://" + IP_ADDRESS + "/api/program";
+    public static String API_REGISTER = "http://" + IP_ADDRESS + "/api/registration";
+    /* Student Registration End*/
 
     // Current Courses End-Point
     public static String API_CURRENT_COURSES = "http://" + IP_ADDRESS + "/api/v1/current-courses";
