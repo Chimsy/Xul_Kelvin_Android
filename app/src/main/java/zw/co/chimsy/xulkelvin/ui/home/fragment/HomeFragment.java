@@ -20,6 +20,7 @@ import zw.co.chimsy.xulkelvin.helper.SQLiteHandler;
 import zw.co.chimsy.xulkelvin.helper.SessionManager;
 import zw.co.chimsy.xulkelvin.ui.classes.activity.ClassesActivity;
 import zw.co.chimsy.xulkelvin.ui.enrollment.EnrollmentActivity;
+import zw.co.chimsy.xulkelvin.ui.faq.FrequentlyAskedQuestionsActivity;
 import zw.co.chimsy.xulkelvin.ui.helpdesk.HelpDeskActivity;
 import zw.co.chimsy.xulkelvin.ui.payment.PaymentsActivity;
 import zw.co.chimsy.xulkelvin.ui.results.activity.ResultsActivity;
@@ -37,7 +38,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     public HomeFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -65,6 +65,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         CardView classes = view.findViewById(R.id.cardV_Classes);
         CardView enrollment = view.findViewById(R.id.cardV_Enrollment);
         CardView payments = view.findViewById(R.id.cardV_Payments);
+        CardView faq = view.findViewById(R.id.cardV_FAQ);
         CardView helpdesk = view.findViewById(R.id.cardV_HelpDesk);
         CardView timetable = view.findViewById(R.id.cardV_ExamTimeTable);
         CardView exit = view.findViewById(R.id.cardV_Exit);
@@ -78,6 +79,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         timetable.setOnClickListener(this);
         exit.setOnClickListener(this);
         payments.setOnClickListener(this);
+        faq.setOnClickListener(this);
         helpdesk.setOnClickListener(this);
         poweredByObj.setOnClickListener(this); // Powered By Chimsy®
 
@@ -97,7 +99,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         v_flipper.setInAnimation(getContext(), android.R.anim.slide_in_left);
     }
 
-
     @Override
     public void onClick(View v) {
         Intent i;
@@ -114,7 +115,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 startActivity(i);
                 break;
 
-
             case R.id.cardV_Enrollment:
                 i = new Intent(getContext(), EnrollmentActivity.class);
                 startActivity(i);
@@ -122,6 +122,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
             case R.id.cardV_Payments:
                 i = new Intent(getContext(), PaymentsActivity.class);
+                startActivity(i);
+                break;
+
+            case R.id.cardV_FAQ:
+                i = new Intent(getContext(), FrequentlyAskedQuestionsActivity.class);
                 startActivity(i);
                 break;
 

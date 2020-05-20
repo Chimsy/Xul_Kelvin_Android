@@ -251,6 +251,93 @@
 
                 <!--Left Card-->
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cardV_FAQ"
+                    android:layout_width="@dimen/card_view_width"
+                    android:layout_height="@dimen/card_view_height"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:focusable="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/icon_helpdesk" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/colorAccent"
+                            android:lines="1"
+                            android:text="FAQ"
+                            android:textAlignment="center"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                            android:textColor="@android:color/white" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!--Right Card-->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardV_HelpDesk"
+                    android:layout_width="@dimen/card_view_width"
+                    android:layout_height="@dimen/card_view_height"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/image_helpdesk" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/colorAccent"
+                            android:lines="1"
+                            android:text="Help Desk"
+                            android:textAlignment="center"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                            android:textColor="@android:color/white" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+            </LinearLayout>
+            <!--This is the Fifth Layer Of The Grid-->
+
+            <!-- Fourth Layer Of The Grid-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <!--Left Card-->
+                <androidx.cardview.widget.CardView
 
                     android:id="@+id/cardV_Payments"
                     android:layout_width="@dimen/card_view_width"
@@ -290,7 +377,7 @@
 
                 <!--Right Card-->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/cardV_HelpDesk"
+                    android:id="@+id/cardV_"
                     android:layout_width="@dimen/card_view_width"
                     android:layout_height="@dimen/card_view_height"
                     android:layout_margin="5dp"
@@ -326,6 +413,7 @@
                 </androidx.cardview.widget.CardView>
 
             </LinearLayout>
+            <!-- Fourth Layer Of The Grid End-->
 
             <!--This is the Fifth Layer Of The Grid-->
             <LinearLayout
