@@ -60,15 +60,15 @@
             android:padding="1dp"
             tools:context="org.youthadvocateszim.colaspingtollbar.MainActivity">
 
-            <!--<TextView
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="10dp"
-                android:text=""
+                android:text="Welcome Golden Chimusinde"
                 android:textAlignment="center"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
                 android:textColor="@android:color/black"
-                android:textStyle="bold" />-->
+                android:textStyle="bold" />
 
             <!--This is The First Layer Of The Grid-->
             <LinearLayout

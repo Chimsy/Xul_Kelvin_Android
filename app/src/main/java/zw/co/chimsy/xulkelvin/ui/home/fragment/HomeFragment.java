@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import androidx.cardview.widget.CardView;
@@ -135,7 +136,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.cardV_Exit:
-                logoutUser();
+                Toast.makeText(getContext(), "Kelvin This is a TOAS", Toast.LENGTH_LONG).show();
+//                logoutUser();
                 break;
 
             default:

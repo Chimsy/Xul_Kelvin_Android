@@ -54,6 +54,7 @@ import static zw.co.chimsy.xulkelvin.utils.AppConstants.KEY_USER_TOKEN;
 import static zw.co.chimsy.xulkelvin.utils.AppConstants.KEY_YEAR;
 import static zw.co.chimsy.xulkelvin.utils.AppUrls.API_LOGIN;
 import static zw.co.chimsy.xulkelvin.utils.AppUrls.API_PROGRAM_IDS;
+import static zw.co.chimsy.xulkelvin.utils.AppUrls.API_REGISTER;
 import static zw.co.chimsy.xulkelvin.utils.AppUrls.WEB_HOOK;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -174,7 +175,7 @@ public class RegisterActivity extends AppCompatActivity {
         final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
         RequestBody postBody = RequestBody.create(postData.toString(), JSON);
         Request post = new Request.Builder()
-                .url(WEB_HOOK)
+                .url(API_REGISTER)
                 .post(postBody)
                 .build();
 

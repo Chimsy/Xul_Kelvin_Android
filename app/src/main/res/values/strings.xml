@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Xul Kelvin</string>
+    <string name="app_name">OCSS</string>
 
     <!-- On-boarding  -->
     <string name="title_activity_welcome">Home Screen</string>
