@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import androidx.cardview.widget.CardView;
@@ -19,7 +18,7 @@ import zw.co.chimsy.xulkelvin.R;
 import zw.co.chimsy.xulkelvin.helper.SQLiteHandler;
 import zw.co.chimsy.xulkelvin.helper.SessionManager;
 import zw.co.chimsy.xulkelvin.ui.classes.activity.ClassesActivity;
-import zw.co.chimsy.xulkelvin.ui.enrollment.EnrollmentActivity;
+import zw.co.chimsy.xulkelvin.ui.notifications.activity.NotificationsActivity;
 import zw.co.chimsy.xulkelvin.ui.faq.FrequentlyAskedQuestionsActivity;
 import zw.co.chimsy.xulkelvin.ui.helpdesk.HelpDeskActivity;
 import zw.co.chimsy.xulkelvin.ui.payment.PaymentsActivity;
@@ -116,7 +115,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.cardV_Enrollment:
-                i = new Intent(getContext(), EnrollmentActivity.class);
+                i = new Intent(getContext(), NotificationsActivity.class);
                 startActivity(i);
                 break;
 
@@ -141,8 +140,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.cardV_Exit:
-                Toast.makeText(getContext(), "Kelvin This is a TOAS", Toast.LENGTH_LONG).show();
-//                logoutUser();
+                logoutUser();
                 break;
 
             default:

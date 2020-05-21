@@ -24,4 +24,9 @@ public class AppUrls {
     // Course Timetable End-Point
     public static String API_TIMETABLE = "http://" + IP_ADDRESS + "/api/v1/timetable";
 
+    // Messages
+    public static String API_POST_MESSAGES = "http://" + IP_ADDRESS + "/api/v1/send-msg-help-desk";
+    public static String API_GET_MESSAGES = "http://" + IP_ADDRESS + "/api/v1/receive-msg-help-desk";
+
+
 }

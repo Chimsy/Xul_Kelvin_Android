@@ -1,16 +1,16 @@
-package zw.co.chimsy.xulkelvin.ui.helpdesk;
+package zw.co.chimsy.xulkelvin.ui.notifications.fragment;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.Notification;
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
+import android.view.ViewGroup;
 import android.widget.Toast;
+
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.gson.JsonObject;
 
@@ -20,7 +20,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Objects;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -32,92 +35,88 @@ import okhttp3.Response;
 import okhttp3.ResponseBody;
 import zw.co.chimsy.xulkelvin.R;
 import zw.co.chimsy.xulkelvin.helper.SQLiteHandler;
-import zw.co.chimsy.xulkelvin.ui.home.MainActivity;
-import zw.co.chimsy.xulkelvin.ui.startup.LoginActivity;
+import zw.co.chimsy.xulkelvin.ui.home.fragment.HomeFragment;
+import zw.co.chimsy.xulkelvin.ui.notifications.adapter.RecyclerVIewNotificationsAdapter;
+import zw.co.chimsy.xulkelvin.ui.notifications.model.List_Data_Notifications;
 
 import static zw.co.chimsy.xulkelvin.utils.AppConstants.KEY_RESULT;
-import static zw.co.chimsy.xulkelvin.utils.AppUrls.API_CURRENT_COURSES;
-import static zw.co.chimsy.xulkelvin.utils.AppUrls.API_POST_MESSAGES;
+import static zw.co.chimsy.xulkelvin.utils.AppUrls.API_COURSES_RESULTS;
+import static zw.co.chimsy.xulkelvin.utils.AppUrls.API_GET_MESSAGES;
 import static zw.co.chimsy.xulkelvin.utils.AppUrls.WEB_HOOK;
 
-public class HelpDeskActivity extends AppCompatActivity {
-    private static final String TAG = HelpDeskActivity.class.getSimpleName();
+/**
+ * A simple {@link Fragment} subclass.
+ */
+public class PrivateMessagesFragment extends Fragment {
+    private static final String TAG = HomeFragment.class.getSimpleName();
 
-    EditText txtMsgTitle, txtMsgBody;
-    Button submit;
-    public OkHttpClient client;
-    private SQLiteHandler db;
+    private RecyclerView rv;
+    private List<List_Data_Notifications> list_data_notifications;
+    private RecyclerVIewNotificationsAdapter adapter;
     private ProgressDialog pDialog;
+    private OkHttpClient client;
+    private SQLiteHandler db;
 
+    public PrivateMessagesFragment() {
+        // Required empty public constructor
+    }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_help_desk);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_private_messages, container, false);
 
+        // SqLite database handler
+        db = new SQLiteHandler(Objects.requireNonNull(getActivity()).getApplicationContext());
 
         // Progress dialog
-        pDialog = new ProgressDialog(this);
+        pDialog = new ProgressDialog(getContext());
         pDialog.setCancelable(false);
-
 
         //OkHttp Initialise
         client = new OkHttpClient();
 
-        // SqLite database handler
-        db = new SQLiteHandler(getApplicationContext());
+        rv = view.findViewById(R.id.recycler_view_private_messages);
+        rv.setHasFixedSize(true);
+        rv.setLayoutManager(new LinearLayoutManager(getContext()));
+        list_data_notifications = new ArrayList<>();
+        adapter = new RecyclerVIewNotificationsAdapter(list_data_notifications, getContext());
 
-        txtMsgTitle = findViewById(R.id.editText_msg_title);
-        txtMsgBody = findViewById(R.id.editText_msg_body);
-        submit = findViewById(R.id.btn_submit);
+        fetchUserProfile();
 
-        submit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (txtMsgTitle.length() == 0 || txtMsgBody.length() == 0) {
-                    Toast.makeText(HelpDeskActivity.this, "Message Title & Body Cannot Be Empty For You To Submit Your Request", Toast.LENGTH_LONG).show();
-                }
-                if (txtMsgTitle.length() > 3 && txtMsgBody.length() > 8) {
-                    postStudentHelpdeskRequest(txtMsgTitle.getText().toString(), txtMsgBody.getText().toString());
-                } else {
-                    Toast.makeText(HelpDeskActivity.this, "Message Title & Body To Short", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+
+        return view;
 
     }
 
-    private void postStudentHelpdeskRequest(String MessageTitle, String MessageBody) {
+
+    private void fetchUserProfile() {
         // Fetching user details from SQLite
         HashMap<String, String> user = db.getUserDetails();
 
         String actual_token = user.get("actual_token");
         String reg_num = user.get("reg_num");
 
-        postData(actual_token, reg_num, MessageTitle, MessageBody);
+        getData(actual_token, reg_num);
 
         Log.i(TAG, "fetchUserProfile: " + actual_token);
 
     }
 
     /* Consume End-Points */
-    private void postData(String token, String reg_num, String msg_title, String msg_body) {
+    private void getData(String token, String reg_num) {
 
-        pDialog.setMessage("Fetching Your Current Classes...");
+        pDialog.setMessage("Fetching Your Private Messages...");
         showDialog();
 
         // Making a Post Request
         JsonObject postData = new JsonObject();
         postData.addProperty("reg_num", reg_num);
-        postData.addProperty("msg_title", msg_title);
-        postData.addProperty("msg_body", msg_body);
-        postData.addProperty("msg_state", 0);
         postData.addProperty("msg_type", "private");
 
         final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
         RequestBody postBody = RequestBody.create(postData.toString(), JSON);
         Request post = new Request.Builder()
-                .url(API_POST_MESSAGES)
+                .url(API_GET_MESSAGES)
                 .post(postBody)
                 .addHeader("Authorization", "Bearer " + token)
                 .build();
@@ -136,12 +135,12 @@ public class HelpDeskActivity extends AppCompatActivity {
                     ResponseBody responseBody = response.body();
                     if (!response.isSuccessful()) {
                         hideDialog();
-                        Toast.makeText(HelpDeskActivity.this, "ERROR: Failed To Reach Servers To Post Your Request", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "ERROR: Failed To Reach Servers To Get Your Messages", Toast.LENGTH_SHORT).show();
                         throw new IOException("Unexpected code " + response);
                     }
 
-
                     assert responseBody != null;
+
                     String JSON_STRING = responseBody.string();
 
                     // get JSONObject from JSON file
@@ -151,17 +150,25 @@ public class HelpDeskActivity extends AppCompatActivity {
                     JSONArray jsonArray = jsonObject.getJSONArray(KEY_RESULT);
 
                     JSONObject jsonObjectInnerLog = jsonArray.getJSONObject(0);
-                    Log.i(TAG, "onResponse: " + jsonObjectInnerLog.getString("course_id"));
+                    Log.i(TAG, "onResponse: " + jsonObjectInnerLog.getString("msg_title"));
+                    Log.i(TAG, "onResponse: " + jsonObjectInnerLog.getString("msg_body"));
 
-                    runOnUiThread(new Runnable() {
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        JSONObject jsonObjectInner = jsonArray.getJSONObject(i);
+
+                        List_Data_Notifications ld = new List_Data_Notifications(
+                                jsonObjectInner.getString("msg_title"),
+                                jsonObjectInner.getString("msg_body"));
+
+                        list_data_notifications.add(ld);
+                    }
+
+                    Objects.requireNonNull(getActivity()).runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
+                            Log.i(TAG, "run: tirikuwanikawo here muno");
                             hideDialog();
-                            // Launching the login activity
-                            Intent intent = new Intent(HelpDeskActivity.this, Notification.class);
-                            startActivity(intent);
-                            finish();
-                            Toast.makeText(HelpDeskActivity.this, "Request Send Please Check Your Notification, For Your Response.", Toast.LENGTH_SHORT).show();
+                            rv.setAdapter(adapter);
                         }
                     });
 

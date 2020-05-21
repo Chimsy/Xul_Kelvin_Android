@@ -76,6 +76,10 @@
     <string name="my_timetable">Timetable</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="program_id">Program ID</string>
+    <string name="messages">Messages</string>
+    <string name="what_do_you_want_to_know">What Do You Want To Know?</string>
+    <string name="submit">SUBMIT</string>
+    <string name="message_subject_title">Message Subject/Title</string>
 
 
 </resources>

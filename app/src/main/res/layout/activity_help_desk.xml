@@ -1,9 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="10dp"
     tools:context=".ui.helpdesk.HelpDeskActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <EditText
+        android:id="@+id/editText_msg_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@android:color/white"
+        android:hint="@string/message_subject_title"
+        android:inputType="textCapWords"
+        android:padding="10dp"
+        android:singleLine="true"
+        android:textColor="@android:color/black"
+        android:textColorHint="@color/input_register_hint"
+        android:autofillHints="Tell The Heading Of What You Want To Know" />
+
+
+    <EditText
+        android:id="@+id/editText_msg_body"
+        android:layout_width="fill_parent"
+        android:layout_height="124dp"
+        android:layout_marginBottom="10dp"
+        android:background="@android:color/white"
+        android:hint="@string/what_do_you_want_to_know"
+        android:inputType="textMultiLine"
+        android:lines="5"
+        android:minLines="6"
+        android:padding="10dp"
+        android:scrollbars="vertical"
+        android:selectAllOnFocus="true"
+        android:textColor="@android:color/black"
+        android:textColorHint="@color/input_register_hint"
+        android:autofillHints="Please Enter Your Request" />
+
+
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dip"
+        android:background="@color/colorAccent"
+        android:text="@string/submit"
+        android:textColor="@android:color/white" />
+
+
+</LinearLayout>

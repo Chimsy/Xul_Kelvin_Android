@@ -17,7 +17,10 @@
         <activity android:name=".ui.timetable.activity.TimeTableActivity" />
         <activity android:name=".ui.helpdesk.HelpDeskActivity" />
         <activity android:name=".ui.payment.PaymentsActivity" />
-        <activity android:name=".ui.enrollment.EnrollmentActivity" />
+        <activity
+            android:name=".ui.notifications.activity.NotificationsActivity"
+            android:theme="@style/MyMaterialTheme.Base"
+            />
         <activity android:name=".ui.results.activity.ResultsActivity" />
         <activity android:name=".ui.classes.activity.ClassesActivity" /> <!-- Splash Activity -->
         <activity
@@ -41,7 +44,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ui.home.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>
