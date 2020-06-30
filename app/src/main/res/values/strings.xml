@@ -59,8 +59,10 @@
     <!-- Login & Reg -->
 
     <string name="hint_email">Email</string>
+    <string name="hint_amount">Amount</string>
     <string name="hint_password">Password</string>
     <string name="hint_name">Fullname</string>
+    <string name="hint_regnum">Registration Number</string>
     <string name="btn_login">LOGIN</string>
     <string name="btn_register">REGISTER</string>
     <string name="btn_link_to_register">Not a member? Sign up now.</string>
@@ -80,6 +82,16 @@
     <string name="what_do_you_want_to_know">What Do You Want To Know?</string>
     <string name="submit">SUBMIT</string>
     <string name="message_subject_title">Message Subject/Title</string>
+
+
+    <string name="payment_method_prompt">Choose a Payment Method</string>
+    <string name="pay">Check Out</string>
+    <string name="make_payment">Make Payment</string>
+
+    <string-array name="payment_methods">
+        <item>ECOCASH</item>
+        <item>ZIPIT</item>
+    </string-array>
 
 
 </resources>

@@ -55,7 +55,6 @@ public class HelpDeskActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help_desk);
 
-
         // Progress dialog
         pDialog = new ProgressDialog(this);
         pDialog.setCancelable(false);
@@ -103,7 +102,7 @@ public class HelpDeskActivity extends AppCompatActivity {
     /* Consume End-Points */
     private void postData(String token, String reg_num, String msg_title, String msg_body) {
 
-        pDialog.setMessage("Fetching Your Current Classes...");
+        pDialog.setMessage("Connecting To Messaging Server...");
         showDialog();
 
         // Making a Post Request

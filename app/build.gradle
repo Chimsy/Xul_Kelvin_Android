@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "zw.co.chimsy.xulkelvin"
-        minSdkVersion 19
+        minSdkVersion 24
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -60,9 +60,6 @@ dependencies {
 
     // GSON
     implementation 'com.google.code.gson:gson:2.8.6'
-
-    //Sweet Alert
-    implementation 'com.github.thomper:sweet-alert-dialog:1.4.0'
 
     //Sweet Alert
     implementation 'com.github.thomper:sweet-alert-dialog:1.4.0'

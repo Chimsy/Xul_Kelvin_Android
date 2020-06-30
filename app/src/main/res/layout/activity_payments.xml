@@ -1,9 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.payment.PaymentsActivity">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/colorPrimary"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="10dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:text="@string/make_payment"
+            android:textAlignment="center"
+            android:textAppearance="@android:style/TextAppearance.Large"
+            android:textColor="@android:color/white" />
+
+        <EditText
+            android:id="@+id/editText_regnum"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:autofillHints="Registration Number"
+            android:background="@android:color/white"
+            android:hint="@string/hint_regnum"
+            android:inputType="textCapWords"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/input_register_hint" />
+
+        <Spinner
+            android:id="@+id/spinner_payment_method"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@android:color/white"
+            android:entries="@array/payment_methods"
+            android:hint="@string/program_id"
+            android:padding="10dp"
+            android:prompt="@string/payment_method_prompt"
+            android:spinnerMode="dialog"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/input_register_hint" />
+
+        <EditText
+            android:id="@+id/editText_amount"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:autofillHints="Amount"
+            android:background="@android:color/white"
+            android:hint="@string/hint_amount"
+            android:inputType="numberSigned"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:text="10"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/input_register_hint" />
+
+        <!-- Payment Button -->
+        <Button
+            android:id="@+id/btnPay"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dip"
+            android:background="@color/colorAccent"
+            android:text="@string/pay"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+
+</LinearLayout>

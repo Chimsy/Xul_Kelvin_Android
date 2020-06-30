@@ -28,5 +28,10 @@ public class AppUrls {
     public static String API_POST_MESSAGES = "http://" + IP_ADDRESS + "/api/v1/send-msg-help-desk";
     public static String API_GET_MESSAGES = "http://" + IP_ADDRESS + "/api/v1/receive-msg-help-desk";
 
+    // Payments
+    public static String API_PAYMENT_KYC = "http://" + IP_ADDRESS + "/api/v1/customer-details";
+    public static String API_PAYMENT_PROCESS = "http://" + IP_ADDRESS + "/api/v1/process-payment";
+
+
 
 }
