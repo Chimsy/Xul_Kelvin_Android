@@ -55,7 +55,6 @@ public class LoginActivity extends AppCompatActivity {
     private Activity activity;
     private OkHttpClient client;
     private Button btnLogin;
-    private Button btnLinkToRegister;
     private EditText inputEmail;
     private EditText inputPassword;
     private ProgressDialog pDialog;
@@ -77,7 +76,6 @@ public class LoginActivity extends AppCompatActivity {
         inputEmail = findViewById(R.id.editText_email);
         inputPassword = findViewById(R.id.editText_password);
         btnLogin = findViewById(R.id.btnLogin);
-        btnLinkToRegister = findViewById(R.id.btnLinkToRegisterScreen);
 
         // Progress dialog
         pDialog = new ProgressDialog(this);
@@ -116,20 +114,6 @@ public class LoginActivity extends AppCompatActivity {
 
         });
 
-        // Link to Register Screen
-        btnLinkToRegister.setOnClickListener(new View.OnClickListener() {
-
-            public void onClick(View view) {
-                /*
-                //@TODO Dont forget to remove this session
-                session.setLogin(true);
-                Intent i = new Intent(LoginActivity.this, MainActivity.class);
-                */
-                Intent i = new Intent(LoginActivity.this, RegisterActivity.class);
-                startActivity(i);
-                finish();
-            }
-        });
 
     }
 
