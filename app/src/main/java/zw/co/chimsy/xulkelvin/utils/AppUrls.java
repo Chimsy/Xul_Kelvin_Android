@@ -32,6 +32,10 @@ public class AppUrls {
     public static String API_PAYMENT_KYC = "http://" + IP_ADDRESS + "/api/v1/customer-details";
     public static String API_PAYMENT_PROCESS = "http://" + IP_ADDRESS + "/api/v1/process-payment";
 
+    //PASS
+    public static String API_PAYMENT_PASS_CLASS = "http://" + IP_ADDRESS + "/api/v1/pass-class";
+    public static String API_PAYMENT_PASS_EXAM = "http://" + IP_ADDRESS + "/api/v1/pass-exam";
+
 
 
 }

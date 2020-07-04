@@ -87,6 +87,11 @@
     <string name="payment_method_prompt">Choose a Payment Method</string>
     <string name="pay">Check Out</string>
     <string name="make_payment">Make Payment</string>
+    <string name="decision_goes_here">Decision Goes Here</string>
+    <string name="Can_Attend_Lecture">Can Attend Lectures</string>
+    <string name="Deny_Access">Deny Access To Lectures</string>
+    <string name="Exam_OK">Can Attend Exam</string>
+    <string name="Exam_No">Not Registered To Sit For Exams</string>
 
     <string-array name="payment_methods">
         <item>ECOCASH</item>

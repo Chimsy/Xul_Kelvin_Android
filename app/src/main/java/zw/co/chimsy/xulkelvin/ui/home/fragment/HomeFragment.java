@@ -21,6 +21,8 @@ import zw.co.chimsy.xulkelvin.ui.classes.activity.ClassesActivity;
 import zw.co.chimsy.xulkelvin.ui.notifications.activity.NotificationsActivity;
 import zw.co.chimsy.xulkelvin.ui.faq.FrequentlyAskedQuestionsActivity;
 import zw.co.chimsy.xulkelvin.ui.helpdesk.HelpDeskActivity;
+import zw.co.chimsy.xulkelvin.ui.passes.PassClassActivity;
+import zw.co.chimsy.xulkelvin.ui.passes.PassExamActivity;
 import zw.co.chimsy.xulkelvin.ui.payment.PaymentsActivity;
 import zw.co.chimsy.xulkelvin.ui.results.activity.ResultsActivity;
 import zw.co.chimsy.xulkelvin.ui.startup.LoginActivity;
@@ -64,6 +66,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         CardView classes = view.findViewById(R.id.cardV_Classes);
         CardView enrollment = view.findViewById(R.id.cardV_Enrollment);
         CardView payments = view.findViewById(R.id.cardV_Payments);
+        CardView pass_class = view.findViewById(R.id.cardV_Pass_Class);
+        CardView pass_exam = view.findViewById(R.id.cardV_Pass_Exam);
         CardView faq = view.findViewById(R.id.cardV_FAQ);
         CardView helpdesk = view.findViewById(R.id.cardV_HelpDesk);
         CardView timetable = view.findViewById(R.id.cardV_ExamTimeTable);
@@ -78,6 +82,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         timetable.setOnClickListener(this);
         exit.setOnClickListener(this);
         payments.setOnClickListener(this);
+        pass_class.setOnClickListener(this);
+        pass_exam.setOnClickListener(this);
         faq.setOnClickListener(this);
         helpdesk.setOnClickListener(this);
         poweredByObj.setOnClickListener(this); // Powered By Chimsy®
@@ -116,6 +122,16 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
             case R.id.cardV_Enrollment:
                 i = new Intent(getContext(), NotificationsActivity.class);
+                startActivity(i);
+                break;
+
+            case R.id.cardV_Pass_Class:
+                i = new Intent(getContext(), PassClassActivity.class);
+                startActivity(i);
+                break;
+
+            case R.id.cardV_Pass_Exam:
+                i = new Intent(getContext(), PassExamActivity.class);
                 startActivity(i);
                 break;
 

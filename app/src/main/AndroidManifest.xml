@@ -12,15 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.faq.FrequentlyAskedQuestionsActivity"></activity>
+        <activity android:name=".ui.passes.PassExamActivity"></activity>
+        <activity android:name=".ui.passes.PassClassActivity" />
+        <activity android:name=".ui.faq.FrequentlyAskedQuestionsActivity" />
         <activity android:name=".ui.classes.activity.ClassesDetailViewActivity" />
         <activity android:name=".ui.timetable.activity.TimeTableActivity" />
         <activity android:name=".ui.helpdesk.HelpDeskActivity" />
         <activity android:name=".ui.payment.PaymentsActivity" />
         <activity
             android:name=".ui.notifications.activity.NotificationsActivity"
-            android:theme="@style/MyMaterialTheme.Base"
-            />
+            android:theme="@style/MyMaterialTheme.Base" />
         <activity android:name=".ui.results.activity.ResultsActivity" />
         <activity android:name=".ui.classes.activity.ClassesActivity" /> <!-- Splash Activity -->
         <activity
